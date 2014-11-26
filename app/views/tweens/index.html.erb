@@ -1,0 +1,27 @@
+<h1>Listing tweens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweens.each do |tween| %>
+      <tr>
+        <td><%= tween.status %></td>
+        <td><%= tween.user_id %></td>
+        <td><%= link_to 'Show', tween %></td>
+        <td><%= link_to 'Edit', edit_tween_path(tween) %></td>
+        <td><%= link_to 'Destroy', tween, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tween', new_tween_path %>

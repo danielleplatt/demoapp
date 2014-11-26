@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tweens
+
   root 'static_pages#home'
 
   match '/help', to: 'static_pages#help', via: 'get'
